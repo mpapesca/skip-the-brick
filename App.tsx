@@ -1,16 +1,20 @@
 import 'react-native-gesture-handler';
-import React from 'react';
-import { createDrawerNavigator } from '@react-navigation/drawer';
+import React, { useState } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 
 import RootDrawer from './src/nav/RootDrawer';
-
-const Drawer = createDrawerNavigator();
+import LoadingScreen from './src/screens/LoadingScreen';
 
 export default function App() {
+
+  const [isLoading, setIsLoading] = useState(true);
+  setTimeout(() => setIsLoading(false), 5000);
   return (
     <NavigationContainer>
-      <RootDrawer />
+      { isLoading
+        ? <LoadingScreen />
+        : <RootDrawer />
+      }
     </NavigationContainer>
   );
 }
