@@ -1,21 +1,13 @@
 import React from 'react';
 import { Text, View, StyleSheet } from "react-native";
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 export default function GameScreen() {
     return (
-        <View style={styles.container} >
+        <SafeAreaView>
             <Text>
                 Game
             </Text>
-        </View>
+        </SafeAreaView>
     );
 }
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        backgroundColor: '#fff',
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
-});
